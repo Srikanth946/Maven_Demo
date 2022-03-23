@@ -1,10 +1,25 @@
 package maven.demo.JPA;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
 @Table(name = "book_author_table")
 public class BookAuthorTable {
+	@Id
+	private int l_id;
+	public int getL_id() {
+		return l_id;
+	}
+
+	public void setL_id(int l_id) {
+		this.l_id = l_id;
+	}
+
+	public void setAuthor(AuthorTable author) {
+		this.author = author;
+	}
+
 	private BookTable book;
 	private AuthorTable author;
 	

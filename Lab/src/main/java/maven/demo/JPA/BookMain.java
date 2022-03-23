@@ -11,7 +11,7 @@ public class BookMain {
 
 		System.out.println("Start");
 
-		Configuration config = new Configuration();
+		Configuration config = new Configuration().configure().addAnnotatedClass(BookAuthorTable.class);
 		SessionFactory sessionFactory = config.configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
