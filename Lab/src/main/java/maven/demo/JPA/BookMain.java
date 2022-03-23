@@ -1,14 +1,11 @@
-package Booklab;
-
+package maven.demo.JPA;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-//import maven.demo.JPA1.Employee;
-
-public class AuthorJpa {
+public class BookMain {
 
 	public static void main(String[] args) {
 
@@ -18,16 +15,16 @@ public class AuthorJpa {
 		SessionFactory sessionFactory = config.configure().buildSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
-
-		Author emp = new Author(111, "Srikanth", 45000);
-		session.save(emp); // insert
-//		session.update(emp); // update 
-//		session.delete(emp); // delete 
+//		AuthorTable a = new AuthorTable(100, "Author A");
+//		BookTable b = new BookTable("I23BN", "Book A", 200);
+//		BookAuthorTable table = new BookAuthorTable(b,a);
 		
-		Author empData = session.get(Author.class, 111); // select
+		AuthorTable emp= new AuthorTable(1,"srikanth");
+		session.save(emp); 
+		transaction.commit();
+		AuthorTable empData = session.get(AuthorTable.class, 2); // select
 		System.out.println(empData.toString());
 		System.out.println("End");
-		transaction.commit();
 
 	}
 }

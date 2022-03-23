@@ -1,4 +1,4 @@
-package Booklab;
+package maven.demo.JPA;
 
 import javax.persistence.Column;
 import javax.persistence.Id;

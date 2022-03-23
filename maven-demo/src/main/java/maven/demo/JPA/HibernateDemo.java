@@ -18,12 +18,12 @@ public class HibernateDemo {
 		Session session = sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		Employee emp = new Employee(111, "Srikanth", 45000);
+		Employee emp = new Employee(11, "Srikanth", 45000);
 		session.save(emp); // insert
 //		session.update(emp); // update 
 //		session.delete(emp); // delete 
 		transaction.commit();
-		Employee empData = session.get(Employee.class, 111); // select
+		Employee empData = session.get(Employee.class, 11); // select
 		System.out.println(empData.toString());
 		System.out.println("End");
 

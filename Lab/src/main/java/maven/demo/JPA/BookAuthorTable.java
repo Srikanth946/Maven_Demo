@@ -1,17 +1,18 @@
-package Booklab;
+package maven.demo.JPA;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
-
+@Entity
 @Table(name = "book_author_table")
 public class BookAuthorTable {
 	private BookTable book;
-	private Author author;
+	private AuthorTable author;
 	
 	public BookAuthorTable() {
 		super();
 	}
 
-	public BookAuthorTable(BookTable book, Author author) {
+	public BookAuthorTable(BookTable book, AuthorTable author) {
 		super();
 		this.book = book;
 		this.author = author;
@@ -25,7 +26,7 @@ public class BookAuthorTable {
 		this.book = book;
 	}
 
-	public Author getAuthor() {
+	public AuthorTable getAuthor() {
 		return author;
 	}
 }
