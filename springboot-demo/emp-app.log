@@ -1,0 +1,18 @@
+2022-03-25 12:39:35.779  INFO 13268 --- [main] c.c.s.demo.SpringbootDemoApplication     : Starting SpringbootDemoApplication using Java 17.0.2 on LIN66015940 with PID 13268 (C:\Users\GSRIKA\Documents\workspace-spring-tool-suite-4-4.14.0.RELEASE\springboot-demo\target\classes started by gsrika in C:\Users\GSRIKA\Documents\workspace-spring-tool-suite-4-4.14.0.RELEASE\springboot-demo)
+2022-03-25 12:39:35.782  INFO 13268 --- [main] c.c.s.demo.SpringbootDemoApplication     : No active profile set, falling back to 1 default profile: "default"
+2022-03-25 12:39:36.511  INFO 13268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2022-03-25 12:39:36.518  INFO 13268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-25 12:39:36.520  INFO 13268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2022-03-25 12:39:36.567  INFO 13268 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-25 12:39:36.568  INFO 13268 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 734 ms
+2022-03-25 12:39:36.916  INFO 13268 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2022-03-25 12:39:36.931  INFO 13268 --- [main] c.c.s.demo.SpringbootDemoApplication     : Started SpringbootDemoApplication in 1.451 seconds (JVM running for 2.027)
+2022-03-25 12:40:10.994  INFO 13268 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-25 12:40:10.995  INFO 13268 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-25 12:40:10.995  INFO 13268 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2022-03-25 12:40:11.010  WARN 13268 --- [http-nio-8088-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2022-03-25 12:40:31.022  INFO 13268 --- [http-nio-8088-exec-3] c.c.s.d.controller.EmployeeController    : get-all-employees
+2022-03-25 12:40:31.022  INFO 13268 --- [http-nio-8088-exec-3] c.c.s.demo.service.EmployeeService       : EmployeeService getAllEmps
+2022-03-25 12:40:31.022  WARN 13268 --- [http-nio-8088-exec-3] c.c.s.demo.service.EmployeeService       : EmployeeService getAllEmps
+2022-03-25 12:40:31.023 ERROR 13268 --- [http-nio-8088-exec-3] c.c.s.demo.service.EmployeeService       : EmployeeService getAllEmps
+2022-03-25 12:40:45.456  INFO 13268 --- [RMI TCP Connection(3)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.

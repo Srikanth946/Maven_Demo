@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<!-- Dependency injection -->
+	<bean id="employee" class="com.capgemini.springboot.demo.model.Employee">
+	<property name="employeeId" value= " 123"></property>
+	<property name="firstName" value="Ram"></property>
+	<property name="salary" value="2000"></property>
+	</bean>
+	
+	<bean id="employee1" class="com.capgemini.springboot.demo.model.Employee">
+	<property name="employeeId" value= " 123"></property>
+	<property name="firstName" value="Srihari"></property>
+	<property name="salary" value="4000"></property>
+	</bean>
+	
+	<bean id="employee2" class="com.capgemini.springboot.demo.model.Employee">
+	<property name="employeeId" value= "101"></property>
+	<property name="firstName" value="Sonu"></property>
+	<property name="salary" value="50000"></property>
+	</bean>
+		
+</beans>
