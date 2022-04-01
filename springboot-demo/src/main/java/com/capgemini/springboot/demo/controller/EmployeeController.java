@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,9 +31,10 @@ public class EmployeeController implements IEmployeeController {
 	private EmployeeService service;
 
 //	http://localhost:8088/emp/get-employee-by-id/{eid}
-	@GetMapping("/get-employee-by-id/{eid}") // 101 
+	@Override
+	@GetMapping("/get-employee-by-id/{eid}") // 101
 	public ResponseEntity<Employee> getEmployeeById(@PathVariable(name = "eid") int employeeId) {
-		LOG.info("getEmployeeById " + employeeId);
+		LOG.info(Integer.toString(employeeId));
 		Employee emp = service.getEmpById(employeeId);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "Employee " + employeeId + " was found successfully.");
@@ -41,9 +43,10 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/get-employee-by-id/{eid}
+	@Override
 	@GetMapping("/get-employees-by-firstname/{firstName}")
 	public ResponseEntity<List<Employee>> getEmployeeByFirstName(@PathVariable(name = "firstName") String firstName) {
-		LOG.info("getEmployeeByfirstName " + firstName);
+		LOG.info(firstName);
 		List<Employee> empList = service.getEmpsByFirstName(firstName);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("message", "Employees found successfully.");
@@ -52,6 +55,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 	// http://localhost:8088/emp/get-all-employees
+	@Override
 	@GetMapping("/get-all-employees")
 	public ResponseEntity<List<Employee>> getAllEmployees() {
 		LOG.info("get-all-employees");
@@ -63,6 +67,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/add-employee 
+	@Override
 	@PostMapping("/add-employee")
 	public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
 		LOG.info(employee.toString());
@@ -74,7 +79,10 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/update-employee 
+	@Override
 	@PutMapping("/update-employee")
+//	@PostMapping("/update-employee")
+//	@PatchMapping("/update-employee")
 	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
 		LOG.info(employee.toString());
 		Employee emp = service.updateEmp(employee);
@@ -85,6 +93,7 @@ public class EmployeeController implements IEmployeeController {
 	}
 
 //	http://localhost:8088/emp/delete-employee/{eid} 
+	@Override
 	@DeleteMapping("/delete-employee/{eid}")
 	public ResponseEntity<Employee> deleteEmployee(@PathVariable(name = "eid") int employeeId) {
 		LOG.info(Integer.toString(employeeId));
@@ -94,5 +103,4 @@ public class EmployeeController implements IEmployeeController {
 		ResponseEntity<Employee> response = new ResponseEntity<>(emp, headers, HttpStatus.OK);
 		return response;
 	}
-
 }
